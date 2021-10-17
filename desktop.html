@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>get mac's password</title>
+    <script>
+        console.log($("#a".val()))
+    </script>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #main {
+            position:absolute;right:10px;top:0px;
+            text-align: center;
+        }
+        #show_time {
+            color: #FFF;
+            font-size: 14px;
+        }
+        .button {
+            background-color: #008CBA; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body background="img/desktop_bg.png" style=" background-repeat:no-repeat;background-size:100% 100%;background-attachment:fixed;">
+    <div id="main">
+        <div id="show_time">
+            <script>
+                setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

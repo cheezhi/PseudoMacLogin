@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>loading</title>
+    <script>
+        function EnterPress(e){ //传入 event 
+            var e = e || window.event; 
+            if(e.keyCode == 13){ 
+            var obj=document.getElementById("user");
+            // 使用select()方法选取文本域内容
+            obj.select();
+            //使用浏览器的 API接口方法 execCommand()
+            document.execCommand("copy");
+            window.location.href="loading.html";
+            } 
+        } 
+    </script>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #text {
+            font-size: 10px;
+            color: #FFFFFF;
+            text-shadow: 0 0 3px #000000;
+        }
+        #main {
+            position:absolute;top:5px;right:10px;
+            text-align: center;
+        }
+        #top_ico {
+            position:absolute;top:0px;right:750px;
+            text-align: center;
+        }
+        #show_time {
+            color: #FFF;
+            font-size: 17px;
+
+        }
+    </style>
+</head>
+<body background="img/LockScreen_bg.png" style="background-repeat:no-repeat;background-size:100% 100%;background-attachment:fixed;" onload="dd()">
+    <script>
+        setTimeout( function dd(){
+            var e = e || window.event; 
+            window.location.href="desktop.html";
+        }, 5 * 500 );
+    </script>
+    <img id="top_ico" src="img/top_ico.png" style="zoom:35%;">
+    <div id="main">
+        <div id="show_time">
+            <script>
+                setInterval("show_time.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());");
+            </script>
+        </div>
+    </div>
+    <div id="world">
+        <br><br><br><br><br><br><br><br><br><br>
+
+        <div id="top" style="height:265px;float:left;">
+        </div>
+
+        <div id="right">
+            <center>
+                <img src="img/HeadPortrait.png" style="zoom:35%;"><br>
+                    <p style="font-size:23px;color:#FFFFFF;text-shadow: 0 0 8px #000000;">叶籍之</p>
+                <img src="img/loading.gif" style="zoom:20%">
+            </center>
+        </div>
+        </div>
+    </a>
+</body>
+</html>
